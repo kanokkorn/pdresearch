@@ -1,4 +1,4 @@
-cc = tcc
+cc = cc
 ld = -lcurl
 flags = -std=c99 -Wall -Wextra -Ofast -g
 project = client
