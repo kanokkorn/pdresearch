@@ -1,10 +1,10 @@
 cc = cc
 ld = -lcurl
-flags = -std=c99 -Wall -Wextra -Ofast -g
+flags = -std=c89 -Wall -Wextra -Os -g -pedantic
 project = client
 
-client:
-	$(cc) $(project).c $(flags) $(ld) -o $(project)
+$(project): main.c
+	$(cc) $(flags) $(ld) $< -o $@
 
 clean:
 	rm $(project)
