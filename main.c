@@ -1,4 +1,4 @@
-/* HTTP GET client with 5 timeout written in C99 */
+/* HTTP GET client with 5 timeout written in C89 */
 
 #include <stdio.h>
 #include <unistd.h>
@@ -16,7 +16,7 @@ int main(void) {
       curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
       res = curl_easy_perform(curl);
         if (res != CURLE_OK) {
-          fprintf(stderr, "Failed: %s for %d times\n",
+          fprintf(stderr, "Failed: %s for %d time(s)\n",
               curl_easy_strerror(res), timeout+1);
           timeout++;
         } else
